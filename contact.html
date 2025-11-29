@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Linguasign</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet Map Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🤟</span>
+        <span>Linguasign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Get In Touch</div>
+      <h1>Let's Connect<span class="accent">Together</span></h1>
+      <p class="hero-sub">Have a question? Need support? Want to partner with us? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Methods -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Multiple Ways to Reach Us</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">📧</div>
+          <h3>Email</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">For general inquiries and support</p>
+          <a href="mailto:hello@linguasign.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">hello@linguasign.com</a>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">💬</div>
+          <h3>Live Chat</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Chat with our support team instantly</p>
+          <button class="btn primary" onclick="alert('Live chat would open here')">Start Chat</button>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">📱</div>
+          <h3>Phone</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Call our support line during business hours</p>
+          <a href="tel:+1-555-LINGUASIGN" style="color: var(--primary); text-decoration: none; font-weight: 600;">+1 (555) 546-4827</a>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">📍</div>
+          <h3>Headquarters</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Visit us in San Francisco</p>
+          <p style="color: var(--text);">123 Main Street<br>San Francisco, CA 94105</p>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">🐦</div>
+          <h3>Social Media</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Follow and message us on social</p>
+          <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Twitter</a>
+            <span style="color: var(--muted);">•</span>
+            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">LinkedIn</a>
+            <span style="color: var(--muted);">•</span>
+            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Facebook</a>
+          </div>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">📋</div>
+          <h3>Status Page</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Check system status and incident history</p>
+          <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">status.linguasign.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Find Us On The Map</h2>
+      
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div id="map"></div>
+        
+        <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          <div style="border: 2px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--card-bg);">
+            <h4 style="margin: 0 0 0.5rem 0; color: var(--primary);">📍 Office Address</h4>
+            <p style="color: var(--muted); margin: 0; line-height: 1.6;">
+              123 Main Street<br>
+              San Francisco, CA 94105<br>
+              United States
+            </p>
+          </div>
+          
+          <div style="border: 2px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--card-bg);">
+            <h4 style="margin: 0 0 0.5rem 0; color: var(--primary);">🕐 Business Hours</h4>
+            <p style="color: var(--muted); margin: 0; line-height: 1.6;">
+              Monday - Friday: 9:00 AM - 6:00 PM<br>
+              Saturday: 10:00 AM - 4:00 PM<br>
+              Sunday: Closed
+            </p>
+          </div>
+          
+          <div style="border: 2px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--card-bg);">
+            <h4 style="margin: 0 0 0.5rem 0; color: var(--primary);">🚗 Parking & Transit</h4>
+            <p style="color: var(--muted); margin: 0; line-height: 1.6;">
+              Free parking available<br>
+              BART & Muni nearby<br>
+              Wheelchair accessible
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Send Us a Message</h2>
+      
+      <form id="contact-form" class="form" style="max-width: 600px; margin: 0 auto;">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn primary">Send Message</button>
+          <p style="color: var(--muted); font-size: 0.9rem; margin: 0;">We'll respond within 24 hours</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Business Inquiry -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Business Inquiries</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">📊 Enterprise Sales</h3>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Looking to implement Linguasign for your organization? Our enterprise team can help.</p>
+          <a href="mailto:enterprise@linguasign.com" class="link-arrow">enterprise@linguasign.com →</a>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🤝 Partnerships</h3>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Interested in partnering with Linguasign? Let's explore opportunities together.</p>
+          <a href="mailto:partnerships@linguasign.com" class="link-arrow">partnerships@linguasign.com →</a>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🎓 Academic/Research</h3>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Researchers and institutions can access our API for academic projects.</p>
+          <a href="mailto:research@linguasign.com" class="link-arrow">research@linguasign.com →</a>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">💰 Investor Relations</h3>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Interested in investing in Linguasign? Learn about our growth and vision.</p>
+          <a href="mailto:investors@linguasign.com" class="link-arrow">investors@linguasign.com →</a>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">🎤 Press & Media</h3>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Media inquiries, press releases, and interview requests welcome.</p>
+          <a href="mailto:press@linguasign.com" class="link-arrow">press@linguasign.com →</a>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px;">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">❤️ Feedback & Accessibility</h3>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Have accessibility feedback? Let us know how we can improve.</p>
+          <a href="feedback.html" class="link-arrow">Send Accessibility Feedback →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Times -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Our Response Times</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div style="display: grid; gap: 1rem;">
+          <div style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+            <h3 style="margin: 0 0 0.5rem 0;">Enterprise Support</h3>
+            <p style="color: var(--muted); margin: 0;">Response within 1 hour, 24/7 support</p>
+          </div>
+          <div style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+            <h3 style="margin: 0 0 0.5rem 0;">Pro Support</h3>
+            <p style="color: var(--muted); margin: 0;">Response within 4 hours, business days</p>
+          </div>
+          <div style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+            <h3 style="margin: 0 0 0.5rem 0;">Free Support</h3>
+            <p style="color: var(--muted); margin: 0;">Response within 2 days, business days</p>
+          </div>
+          <div style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+            <h3 style="margin: 0 0 0.5rem 0;">General Inquiries</h3>
+            <p style="color: var(--muted); margin: 0;">Response within 1 business day</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-box">
+    <h2>Still Have Questions?</h2>
+    <p>Check our help center and FAQ for instant answers.</p>
+    <button class="btn white" onclick="alert('Opening help center')">View Help Center</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">Status</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Linguasign. All rights reserved. | <a href="feedback.html" style="color: var(--muted); text-decoration: none;">Send Feedback</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+  <!-- Map Initialization -->
+  <script>
+    // Initialize map when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // San Francisco coordinates
+      const sfCoordinates = [37.7749, -122.4194];
+      
+      // Create map
+      const map = L.map('map').setView(sfCoordinates, 15);
+      
+      // Add OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19,
+      }).addTo(map);
+      
+      // Add marker with popup
+      const marker = L.marker(sfCoordinates, {
+        icon: L.icon({
+          iconUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDMyIDQwIj48cGF0aCBmaWxsPSIjMDA4OGRkIiBkPSJNMTYgMEMxMi4xIDAgOC43IDEuNyA2LjMgNC4zQzMuNyA2LjkgMiAxMC4zIDIgMTRjMCA1LjEgMiAxMCA2IDE0bDggMTJsOC0xMmM0LTQgNi05IDYtMTRjMC0zLjctMS43LTcuMS00LjMtOS43Qy0yMy4zIDEuNyAxOS45IDAgMTYgMHptMCA1YzIuOCAwIDUgMi4yIDUgNXMtMi4yIDUtNSA1LTUtMi4yLTUtNSAyLjItNSA1LTV6Ii8+PC9zdmc+',
+          iconSize: [32, 40],
+          iconAnchor: [16, 40],
+          popupAnchor: [0, -40]
+        })
+      }).addTo(map);
+      
+      // Add popup content
+      marker.bindPopup(
+        '<div style="font-weight: 600; font-size: 14px;">Linguasign Headquarters</div>' +
+        '<div style="font-size: 13px; color: #666; margin-top: 4px;">123 Main Street<br>San Francisco, CA 94105</div>' +
+        '<div style="font-size: 13px; color: #666; margin-top: 4px;">📞 +1 (555) 546-4827<br>📧 hello@linguasign.com</div>'
+      ).openPopup();
+    });
+  </script>
+</body>
+</html>

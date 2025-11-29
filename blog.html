@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Linguasign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🤟</span>
+        <span>Linguasign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">News & Stories</div>
+      <h1>Latest from the<span class="accent">Linguasign Blog</span></h1>
+      <p class="hero-sub">Insights, updates, and stories from our team and community. Learn about AI innovation and accessibility.</p>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  <section class="section">
+    <div class="container">
+      <div style="border: 3px solid var(--primary); padding: 3rem; border-radius: 8px; background: linear-gradient(135deg, rgba(0,136,221,0.05), var(--surface));">
+        <div style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Dec 15, 2024</div>
+        <h2 style="font-size: 2rem; margin: 0 0 1rem 0;">New AI Model Reaches 99% Translation Accuracy</h2>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.6;">
+          Today we're proud to announce the launch of our latest AI model with breakthrough 99% translation accuracy. This represents a significant leap forward in sign language translation technology.
+        </p>
+        <a href="#" class="link-arrow">Read Full Article →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="margin-bottom: 3rem;">Latest Articles</h2>
+      
+      <div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        <article style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg); animation: fadeInUp 0.6s ease-out; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='translateY(-8px)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='translateY(0)'">
+          <div style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">Dec 15, 2024 • 5 min read</div>
+          <h3 style="font-size: 1.3rem; margin: 1rem 0; line-height: 1.4;">New AI Model Reaches 99% Accuracy</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Introducing our latest breakthrough in machine learning that achieves unprecedented translation accuracy for sign language.</p>
+          <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+        </article>
+
+        <article style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg); animation: fadeInUp 0.6s ease-out; animation-delay: 100ms; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='translateY(-8px)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='translateY(0)'">
+          <div style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">Dec 10, 2024 • 7 min read</div>
+          <h3 style="font-size: 1.3rem; margin: 1rem 0; line-height: 1.4;">Linguasign Launches 10 New Sign Languages</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Expanding our global reach with support for JSL, LSF, DGS, and 7 additional sign languages. Now supporting 50+!</p>
+          <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+        </article>
+
+        <article style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg); animation: fadeInUp 0.6s ease-out; animation-delay: 200ms; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='translateY(-8px)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='translateY(0)'">
+          <div style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">Dec 5, 2024 • 6 min read</div>
+          <h3 style="font-size: 1.3rem; margin: 1rem 0; line-height: 1.4;">Enterprise Features Now Available</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Launch of our enterprise platform with advanced security, compliance, and dedicated support for organizations.</p>
+          <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+        </article>
+
+        <article style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg); animation: fadeInUp 0.6s ease-out; animation-delay: 300ms; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='translateY(-8px)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='translateY(0)'">
+          <div style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">Nov 28, 2024 • 8 min read</div>
+          <h3 style="font-size: 1.3rem; margin: 1rem 0; line-height: 1.4;">The Future of Accessible Communication</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Expert insights from our team on where AI-powered accessibility is heading and its impact on society.</p>
+          <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+        </article>
+
+        <article style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg); animation: fadeInUp 0.6s ease-out; animation-delay: 400ms; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='translateY(-8px)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='translateY(0)'">
+          <div style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">Nov 20, 2024 • 5 min read</div>
+          <h3 style="font-size: 1.3rem; margin: 1rem 0; line-height: 1.4;">How Linguasign Is Changing Deaf Education</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Real stories from deaf students and educators using Linguasign to transform learning environments.</p>
+          <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+        </article>
+
+        <article style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg); animation: fadeInUp 0.6s ease-out; animation-delay: 500ms; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='translateY(-8px)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='translateY(0)'">
+          <div style="color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">Nov 15, 2024 • 9 min read</div>
+          <h3 style="font-size: 1.3rem; margin: 1rem 0; line-height: 1.4;">Behind the Scenes: Building Our AI Models</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">A technical deep dive into the machine learning architecture powering Linguasign's real-time translation engine.</p>
+          <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Browse by Category</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='scale(1)'">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+          <h3 style="margin: 0 0 0.5rem 0;">Product Updates</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;">12 articles</p>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='scale(1)'">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤖</div>
+          <h3 style="margin: 0 0 0.5rem 0;">AI & Research</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;">8 articles</p>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='scale(1)'">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">♿</div>
+          <h3 style="margin: 0 0 0.5rem 0;">Accessibility</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;">15 articles</p>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='scale(1)'">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+          <h3 style="margin: 0 0 0.5rem 0;">Community</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;">6 articles</p>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='scale(1)'">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎓</div>
+          <h3 style="margin: 0 0 0.5rem 0;">Education</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;">10 articles</p>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'; this.style.transform='scale(1.05)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='scale(1)'">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">💡</div>
+          <h3 style="margin: 0 0 0.5rem 0;">Tips & Tricks</h3>
+          <p style="color: var(--muted); font-size: 0.9rem;">7 articles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div style="max-width: 600px; margin: 0 auto; text-align: center; border: 3px solid var(--border); padding: 2rem; border-radius: 8px; background: var(--bg);">
+        <h2 style="margin-bottom: 1rem;">Subscribe to Our Newsletter</h2>
+        <p style="color: var(--muted); margin-bottom: 1.5rem;">Get the latest updates, tips, and stories delivered to your inbox weekly.</p>
+        
+        <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+          <input type="email" placeholder="Enter your email" style="flex: 1; padding: 0.75rem; border: 2px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font-size: 1rem;" onchange="this.nextElementSibling.style.display='inline-block'">
+          <button class="btn primary" onclick="alert('Successfully subscribed!')">Subscribe</button>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--muted);">No spam, unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-box">
+    <h2>Have a Story to Share?</h2>
+    <p>We'd love to hear from you. Submit guest posts, testimonials, or partnership ideas.</p>
+    <a href="contact.html" class="btn white">Get In Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">Status</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Linguasign. All rights reserved. | <a href="feedback.html" style="color: var(--muted); text-decoration: none;">Send Feedback</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

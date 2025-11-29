@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linguasign - AI Sign Language Translator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🤟</span>
+        <span>Linguasign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">✨ Breaking Communication Barriers</div>
+      <h1>Breaking Communication<span class="accent">Barriers with AI</span></h1>
+      <p class="hero-sub">Transform sign language into text and speech with advanced AI technology. Real-time translation powered by cutting-edge machine learning.</p>
+      <div class="hero-ctas">
+        <button class="btn primary" onclick="window.location.href='demo.html'">Try Demo</button>
+        <button class="btn secondary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2>Powerful Features</h2>
+      <p class="section-sub">Everything you need for seamless sign language translation</p>
+      
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎯</div>
+          <h3>Real-Time Translation</h3>
+          <p>Instant sign language to text conversion with 98% accuracy. Perfect for live conversations and presentations.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎤</div>
+          <h3>Voice Output</h3>
+          <p>Converted text automatically spoken aloud in multiple languages. Natural-sounding synthesis technology.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🌐</div>
+          <h3>Multi-Language</h3>
+          <p>Support for 50+ sign languages including ASL, BSL, and LSF. Expanding daily with global community.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📱</div>
+          <h3>Cross-Platform</h3>
+          <p>Works on mobile, tablet, and desktop. Native apps for iOS and Android available now.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🔒</div>
+          <h3>Privacy First</h3>
+          <p>End-to-end encryption for all conversations. Your data never leaves your device.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Sub-100ms latency for real-time feedback. Optimized for low-bandwidth environments.</p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Stats Section -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Trusted by Thousands</h2>
+      <div class="stats-grid">
+        <div class="stat reveal stats-card">
+          <div class="stat-number counter" data-target="98">0</div>
+          <span class="stat-unit">%</span>
+          <div class="stat-label">Translation Accuracy</div>
+          <p class="stat-desc">Industry-leading precision in sign language recognition</p>
+        </div>
+        <div class="stat reveal stats-card">
+          <div class="stat-number counter" data-target="150">0</div>
+          <span class="stat-unit">+</span>
+          <div class="stat-label">Countries Served</div>
+          <p class="stat-desc">Expanding globally every month</p>
+        </div>
+        <div class="stat reveal stats-card">
+          <div class="stat-number counter" data-target="50">0</div>
+          <span class="stat-unit">+</span>
+          <div class="stat-label">Sign Languages</div>
+          <p class="stat-desc">Continuous expansion of global coverage</p>
+        </div>
+        <div class="stat reveal stats-card">
+          <div class="stat-number counter" data-target="2500000">0</div>
+          <span class="stat-unit">+</span>
+          <div class="stat-label">Active Users</div>
+          <p class="stat-desc">Growing community of translators worldwide</p>
+        </div>
+        <div class="stat reveal stats-card">
+          <div class="stat-number counter" data-target="99">0</div>
+          <span class="stat-unit">%</span>
+          <div class="stat-label">User Satisfaction</div>
+          <p class="stat-desc">Trusted by accessibility professionals globally</p>
+        </div>
+        <div class="stat reveal stats-card">
+          <div class="stat-number counter" data-target="15000">0</div>
+          <span class="stat-unit">+</span>
+          <div class="stat-label">Organizations Using</div>
+          <p class="stat-desc">From schools to enterprises worldwide</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <p class="section-sub">Choose the solution that fits your needs</p>
+      
+      <div class="products-showcase">
+        <div class="product-tile reveal">
+          <div class="product-icon">📱</div>
+          <h3>Mobile App</h3>
+          <p>On-the-go translation with camera integration. Available on iOS and Android platforms.</p>
+          <a href="demo.html" class="link-arrow">Try It Now →</a>
+        </div>
+        <div class="product-tile reveal">
+          <div class="product-icon">🌐</div>
+          <h3>Web Platform</h3>
+          <p>Full-featured browser-based translator. No installation required, works everywhere.</p>
+          <a href="demo.html" class="link-arrow">Access Platform →</a>
+        </div>
+        <div class="product-tile reveal">
+          <div class="product-icon">🔌</div>
+          <h3>API Access</h3>
+          <p>Integrate sign language translation into your applications. Comprehensive documentation included.</p>
+          <a href="api.html" class="link-arrow">View Documentation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center;">How It Works</h2>
+      <p class="section-sub" style="text-align: center;">Simple three-step process</p>
+      
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="step-number">01</div>
+          <h3>Capture</h3>
+          <p>Point your camera at sign language. Our AI processes video in real-time.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">02</div>
+          <h3>Translate</h3>
+          <p>Advanced machine learning converts signs to text instantly and accurately.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-number">03</div>
+          <h3>Share</h3>
+          <p>Output as text, speech, or share directly. Works in your favorite apps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-box">
+    <h2>Ready to Break Barriers?</h2>
+    <p>Join thousands of users experiencing seamless sign language translation.</p>
+    <button class="btn white" onclick="window.location.href='demo.html'">Get Started Now</button>
+  </section>
+
+  <!-- News Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Latest News</h2>
+      <p class="section-sub">Stay updated with our latest releases and stories</p>
+      
+      <div class="news-grid">
+        <div class="news-card reveal">
+          <div class="news-date">Dec 15, 2024</div>
+          <h3>New AI Model Reaches 99% Accuracy</h3>
+          <a href="blog.html" class="link-arrow">Read More →</a>
+        </div>
+        <div class="news-card reveal">
+          <div class="news-date">Dec 10, 2024</div>
+          <h3>Linguasign Launches 10 New Languages</h3>
+          <a href="blog.html" class="link-arrow">Read More →</a>
+        </div>
+        <div class="news-card reveal">
+          <div class="news-date">Dec 5, 2024</div>
+          <h3>Enterprise Features Now Available</h3>
+          <a href="blog.html" class="link-arrow">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">Status</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Linguasign. All rights reserved. | <a href="feedback.html" style="color: var(--muted); text-decoration: none;">Send Feedback</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Linguasign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🤟</span>
+        <span>Linguasign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Simple & Transparent</div>
+      <h1>Plans for Every<span class="accent">Budget</span></h1>
+      <p class="hero-sub">Choose the perfect plan for your sign language translation needs. Flexible pricing with no hidden fees.</p>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="pricing-grid">
+        <!-- Free Plan -->
+        <div class="pricing-card reveal">
+          <h3>Free</h3>
+          <div class="price">$0<span class="price-unit">/month</span></div>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Perfect for getting started</p>
+          <button class="btn primary" style="width: 100%;" onclick="alert('Sign up for free')">Get Started</button>
+          <ul class="pricing-features">
+            <li>100 translations/month</li>
+            <li>Basic sign languages (5)</li>
+            <li>Web platform access</li>
+            <li>Community support</li>
+            <li>Standard quality</li>
+            <li>Ad-supported</li>
+          </ul>
+        </div>
+
+        <!-- Pro Plan (Featured) -->
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">MOST POPULAR</div>
+          <h3>Pro</h3>
+          <div class="price">$29<span class="price-unit">/month</span></div>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">For regular users</p>
+          <button class="btn primary" style="width: 100%;" onclick="alert('Subscribe to Pro')">Subscribe Now</button>
+          <ul class="pricing-features">
+            <li>Unlimited translations</li>
+            <li>All 50+ sign languages</li>
+            <li>Mobile & web apps</li>
+            <li>Priority email support</li>
+            <li>HD quality output</li>
+            <li>Video integration</li>
+            <li>Analytics dashboard</li>
+            <li>API access (limited)</li>
+          </ul>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card reveal">
+          <h3>Enterprise</h3>
+          <div class="price">Custom<span class="price-unit">pricing</span></div>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">For large organizations</p>
+          <button class="btn secondary" style="width: 100%; border-color: var(--primary); color: var(--primary);" onclick="window.location.href='contact.html'">Contact Sales</button>
+          <ul class="pricing-features">
+            <li>Unlimited everything</li>
+            <li>Custom sign languages</li>
+            <li>Dedicated support</li>
+            <li>SLA guarantee</li>
+            <li>Advanced security</li>
+            <li>HIPAA compliant</li>
+            <li>Unlimited API</li>
+            <li>On-premise option</li>
+            <li>Custom integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">Can I change plans anytime?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately and we'll prorate any charges.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">Do you offer discounts for annual billing?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">Absolutely! Annual billing saves you 20% compared to monthly. We also offer volume discounts for enterprise customers.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">What payment methods do you accept?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">We accept all major credit cards (Visa, Mastercard, Amex), PayPal, and bank transfers for enterprise customers.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">Is there a free trial for Pro?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">Yes, we offer a 14-day free trial of all Pro features. No credit card required to get started.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">What if I exceed my plan limits?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">You can purchase additional credits as needed, or automatically upgrade to the next plan. We'll never interrupt your service.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">What's Included</h2>
+      
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; margin-top: 2rem;">
+          <thead>
+            <tr style="border-bottom: 3px solid var(--border);">
+              <th style="padding: 1rem; text-align: left; font-weight: 700;">Feature</th>
+              <th style="padding: 1rem; text-align: center; font-weight: 700;">Free</th>
+              <th style="padding: 1rem; text-align: center; font-weight: 700;">Pro</th>
+              <th style="padding: 1rem; text-align: center; font-weight: 700;">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--surface);">
+              <td style="padding: 1rem;">Translations per month</td>
+              <td style="padding: 1rem; text-align: center;">100</td>
+              <td style="padding: 1rem; text-align: center;">Unlimited</td>
+              <td style="padding: 1rem; text-align: center;">Unlimited</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface);">
+              <td style="padding: 1rem;">Sign languages</td>
+              <td style="padding: 1rem; text-align: center;">5</td>
+              <td style="padding: 1rem; text-align: center;">50+</td>
+              <td style="padding: 1rem; text-align: center;">50+</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface);">
+              <td style="padding: 1rem;">Platform access</td>
+              <td style="padding: 1rem; text-align: center;">Web only</td>
+              <td style="padding: 1rem; text-align: center;">Web & Mobile</td>
+              <td style="padding: 1rem; text-align: center;">All platforms</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface);">
+              <td style="padding: 1rem;">Video integration</td>
+              <td style="padding: 1rem; text-align: center;">-</td>
+              <td style="padding: 1rem; text-align: center;">✓</td>
+              <td style="padding: 1rem; text-align: center;">✓</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface);">
+              <td style="padding: 1rem;">API access</td>
+              <td style="padding: 1rem; text-align: center;">-</td>
+              <td style="padding: 1rem; text-align: center;">Limited</td>
+              <td style="padding: 1rem; text-align: center;">Unlimited</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--surface);">
+              <td style="padding: 1rem;">Support</td>
+              <td style="padding: 1rem; text-align: center;">Community</td>
+              <td style="padding: 1rem; text-align: center;">Priority</td>
+              <td style="padding: 1rem; text-align: center;">Dedicated</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem;">HIPAA compliance</td>
+              <td style="padding: 1rem; text-align: center;">-</td>
+              <td style="padding: 1rem; text-align: center;">-</td>
+              <td style="padding: 1rem; text-align: center;">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-box">
+    <h2>Start Translating Today</h2>
+    <p>Choose your plan and join thousands of users breaking communication barriers.</p>
+    <a href="demo.html" class="btn white">Try Free Demo</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">Status</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Linguasign. All rights reserved. | <a href="feedback.html" style="color: var(--muted); text-decoration: none;">Send Feedback</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

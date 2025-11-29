@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - Linguasign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🤟</span>
+        <span>Linguasign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Try It Now</div>
+      <h1>See It in<span class="accent">Action</span></h1>
+      <p class="hero-sub">Experience real-time sign language translation with our interactive demo. No installation required.</p>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Try the Translator</h2>
+      
+      <div class="demo-grid">
+        <!-- Text to Sign -->
+        <div class="demo-box reveal">
+          <h3>📝 Text to Sign</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Enter any text and see it converted to sign language animations.</p>
+          <input type="text" class="demo-input" placeholder="Type something..." maxlength="100">
+          <div class="demo-output">
+            🎯 Type to see sign language animation...
+          </div>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1rem;">Supports English, Spanish, French, German, and 46+ other languages</p>
+        </div>
+
+        <!-- Sign to Text -->
+        <div class="demo-box reveal">
+          <h3>🎥 Sign to Text</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Enable camera to translate sign language in real-time.</p>
+          <button class="btn primary" id="camera-btn" style="width: 100%; margin-bottom: 1rem;">Enable Camera</button>
+          
+          <!-- Camera Video Container -->
+          <div id="camera-container" style="width: 100%; background: var(--input-bg); border-radius: 6px; overflow: hidden; margin-bottom: 1rem;">
+            <video id="camera-feed" autoplay playsinline style="width: 100%; height: 300px; object-fit: cover; display: none;"></video>
+            <div id="camera-placeholder" class="demo-output" style="min-height: 300px; display: flex; align-items: center; justify-content: center;">
+              📷 Click "Enable Camera" to start
+            </div>
+          </div>
+          
+          <!-- Sign Detection Output -->
+          <div id="detection-output" style="padding: 1rem; background: var(--surface); border-radius: 6px; text-align: center; color: var(--muted); min-height: 60px; display: flex; align-items: center; justify-content: center;">
+            Waiting for input...
+          </div>
+          
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1rem;">Supports ASL, BSL, LSF, and 47+ sign languages</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voice Demo -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Voice & Audio</h2>
+      
+      <div class="demo-grid">
+        <div class="demo-box reveal">
+          <h3>🎤 Text to Speech</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Listen to natural AI-generated voice output.</p>
+          <input type="text" class="demo-input" placeholder="Enter text to hear..." value="Hello, this is Linguasign">
+          <button class="btn primary" style="width: 100%; margin-top: 1rem;" onclick="alert('Audio playback would start')">▶ Play Audio</button>
+          <div style="margin-top: 1rem; padding: 1rem; border: 2px dashed var(--border); border-radius: 6px; text-align: center; color: var(--muted);">
+            🔊 Audio player (simulation)
+          </div>
+        </div>
+
+        <div class="demo-box reveal">
+          <h3>🎙️ Voice to Text</h3>
+          <p style="color: var(--muted); margin-bottom: 1rem;">Speak and watch it convert to text automatically.</p>
+          <button class="btn primary" style="width: 100%; margin-bottom: 1rem;" onclick="alert('Microphone access would be enabled')">🎙️ Start Recording</button>
+          <div class="demo-output">
+            Waiting for voice input...
+          </div>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1rem;">Supports 50+ languages with 99% accuracy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Showcase -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Advanced Features</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Experience sub-100ms latency for real-time conversations. Our optimized algorithms process faster than traditional methods.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎯</div>
+          <h3>99% Accurate</h3>
+          <p>Our AI models achieve 99% translation accuracy using the latest deep learning techniques and continuous learning.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Coverage</h3>
+          <p>Support for all major sign languages including ASL, BSL, LSF, JSL, and many more. New languages added monthly.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🔒</div>
+          <h3>100% Private</h3>
+          <p>End-to-end encryption ensures your conversations stay private. We never store or share your personal data.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📱</div>
+          <h3>Cross-Platform</h3>
+          <p>Works seamlessly on iOS, Android, Windows, macOS, and web browsers. Sync across all your devices.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🚀</div>
+          <h3>Always Improving</h3>
+          <p>Our AI learns and improves daily. Regular updates add new features and improve translation quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">By The Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <div class="stat-number">99%</div>
+          <div class="stat-label">Translation Accuracy</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Sign Languages</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-number">&lt;100ms</div>
+          <div class="stat-label">Response Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Use Cases</h2>
+      
+      <div class="products-showcase">
+        <div class="product-tile reveal">
+          <div class="product-icon">💼</div>
+          <h3>Business Meetings</h3>
+          <p>Real-time translation for professional meetings and conferences. Ensure everyone is included and understood.</p>
+        </div>
+        <div class="product-tile reveal">
+          <div class="product-icon">🏫</div>
+          <h3>Education</h3>
+          <p>Accessible learning for deaf and hard of hearing students. Caption lectures and presentations automatically.</p>
+        </div>
+        <div class="product-tile reveal">
+          <div class="product-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Medical professionals can communicate clearly with deaf patients. Bridge language barriers in critical situations.</p>
+        </div>
+        <div class="product-tile reveal">
+          <div class="product-icon">🎪</div>
+          <h3>Entertainment</h3>
+          <p>Live captions for events, concerts, and performances. Provide accessible entertainment for all audiences.</p>
+        </div>
+        <div class="product-tile reveal">
+          <div class="product-icon">📺</div>
+          <h3>Broadcasting</h3>
+          <p>Real-time sign language interpretation for TV, live streaming, and online broadcasts.</p>
+        </div>
+        <div class="product-tile reveal">
+          <div class="product-icon">👨‍👩‍👧‍👦</div>
+          <h3>Personal Use</h3>
+          <p>Connect with friends and family who use sign language. Break barriers in personal relationships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-box">
+    <h2>Ready to Transform Communication?</h2>
+    <p>Start your free trial today. No credit card required. Full access to all features for 14 days.</p>
+    <button class="btn white" onclick="alert('Sign up for free trial')">Start Free Trial</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">Status</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Linguasign. All rights reserved. | <a href="feedback.html" style="color: var(--muted); text-decoration: none;">Send Feedback</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+  <!-- Camera Access Script -->
+  <script>
+    let cameraStream = null;
+    let cameraActive = false;
+    let detectionInterval = null;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const cameraBtn = document.getElementById('camera-btn');
+      const cameraFeed = document.getElementById('camera-feed');
+      const cameraPlaceholder = document.getElementById('camera-placeholder');
+      const detectionOutput = document.getElementById('detection-output');
+      
+      cameraBtn.addEventListener('click', async function() {
+        if (cameraActive) {
+          // Stop camera
+          stopCamera();
+        } else {
+          // Start camera
+          try {
+            cameraBtn.textContent = '⏳ Requesting camera access...';
+            cameraBtn.disabled = true;
+            
+            // Request camera access
+            cameraStream = await navigator.mediaDevices.getUserMedia({
+              video: {
+                width: { ideal: 1280 },
+                height: { ideal: 720 },
+                facingMode: 'user'
+              },
+              audio: false
+            });
+            
+            // Display video stream
+            cameraFeed.srcObject = cameraStream;
+            cameraFeed.play(); // Ensure video plays
+            cameraFeed.style.display = 'block';
+            cameraPlaceholder.style.display = 'none';
+            
+            detectionOutput.textContent = '🎯 Detecting sign language...';
+            detectionOutput.style.color = 'var(--primary)';
+            
+            cameraBtn.textContent = '⏹️ Stop Camera';
+            cameraBtn.classList.add('btn-active');
+            cameraActive = true;
+            cameraBtn.disabled = false;
+            
+            // Simulate sign language detection
+            simulateSignDetection(detectionOutput);
+            
+          } catch (error) {
+            cameraBtn.textContent = 'Enable Camera';
+            cameraBtn.disabled = false;
+            detectionOutput.textContent = '❌ Camera access denied or not available';
+            detectionOutput.style.color = 'var(--muted)';
+            
+            if (error.name === 'NotAllowedError') {
+              alert('Camera access was denied. Please allow camera access in your browser settings.');
+            } else if (error.name === 'NotFoundError') {
+              alert('No camera found. Please connect a camera device.');
+            } else {
+              alert('Error accessing camera: ' + error.message);
+            }
+          }
+        }
+      });
+      
+      function stopCamera() {
+        if (cameraStream) {
+          cameraStream.getTracks().forEach(track => track.stop());
+          cameraStream = null;
+        }
+        
+        if (detectionInterval) {
+          clearInterval(detectionInterval);
+          detectionInterval = null;
+        }
+        
+        cameraFeed.style.display = 'none';
+        cameraPlaceholder.style.display = 'flex';
+        cameraPlaceholder.innerHTML = '📷 Camera stopped';
+        
+        detectionOutput.textContent = 'Waiting for input...';
+        detectionOutput.style.color = 'var(--muted)';
+        
+        cameraBtn.textContent = 'Enable Camera';
+        cameraBtn.classList.remove('btn-active');
+        cameraActive = false;
+      }
+      
+      function simulateSignDetection(outputElement) {
+        const signs = [
+          '👋 Detected: Wave Gesture',
+          '✌️ Detected: Peace Sign',
+          '👍 Detected: Thumbs Up',
+          '🤝 Detected: Handshake Motion',
+          '✋ Detected: Stop Sign',
+          '🙌 Detected: Celebrate Gesture',
+          '👏 Detected: Clapping Hands',
+          '🤲 Detected: Open Palms',
+          '🎯 Detecting sign language...',
+          '💬 Processing hand gestures...'
+        ];
+        
+        if (detectionInterval) {
+          clearInterval(detectionInterval);
+        }
+        
+        // Update detection every 2-3 seconds
+        detectionInterval = setInterval(() => {
+          if (cameraActive) {
+            const randomSign = signs[Math.floor(Math.random() * signs.length)];
+            outputElement.textContent = randomSign;
+          }
+        }, 2500);
+      }
+    });
+  </script>
+</body>
+</html>

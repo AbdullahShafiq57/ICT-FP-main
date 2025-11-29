@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Linguasign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🤟</span>
+        <span>Linguasign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Your Voice Matters</div>
+      <h1>Send Us Your<span class="accent">Feedback</span></h1>
+      <p class="hero-sub">Help us improve Linguasign. We value your suggestions, bug reports, and ideas for making our platform better.</p>
+    </div>
+  </section>
+
+  <!-- Feedback Types -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">What Kind of Feedback?</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+        <button onclick="document.getElementById('feedback-type').value='bug-report'; this.parentElement.querySelectorAll('button').forEach(b => b.style.borderColor='var(--border)'); this.style.borderColor='var(--primary)'" style="border: 3px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--bg); cursor: pointer; transition: all 0.3s ease;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🐛</div>
+          <h3 style="margin: 0; font-size: 1rem;">Bug Report</h3>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Something not working?</p>
+        </button>
+
+        <button onclick="document.getElementById('feedback-type').value='feature-request'; this.parentElement.querySelectorAll('button').forEach(b => b.style.borderColor='var(--border)'); this.style.borderColor='var(--primary)'" style="border: 3px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--bg); cursor: pointer; transition: all 0.3s ease;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">💡</div>
+          <h3 style="margin: 0; font-size: 1rem;">Feature Request</h3>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">New idea or improvement?</p>
+        </button>
+
+        <button onclick="document.getElementById('feedback-type').value='accessibility'; this.parentElement.querySelectorAll('button').forEach(b => b.style.borderColor='var(--border)'); this.style.borderColor='var(--primary)'" style="border: 3px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--bg); cursor: pointer; transition: all 0.3s ease;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">♿</div>
+          <h3 style="margin: 0; font-size: 1rem;">Accessibility</h3>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Accessibility issue?</p>
+        </button>
+
+        <button onclick="document.getElementById('feedback-type').value='user-experience'; this.parentElement.querySelectorAll('button').forEach(b => b.style.borderColor='var(--border)'); this.style.borderColor='var(--primary)'" style="border: 3px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--bg); cursor: pointer; transition: all 0.3s ease;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
+          <h3 style="margin: 0; font-size: 1rem;">User Experience</h3>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Design or UX feedback?</p>
+        </button>
+
+        <button onclick="document.getElementById('feedback-type').value='performance'; this.parentElement.querySelectorAll('button').forEach(b => b.style.borderColor='var(--border)'); this.style.borderColor='var(--primary)'" style="border: 3px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--bg); cursor: pointer; transition: all 0.3s ease;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+          <h3 style="margin: 0; font-size: 1rem;">Performance</h3>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">Speed or reliability issue?</p>
+        </button>
+
+        <button onclick="document.getElementById('feedback-type').value='other'; this.parentElement.querySelectorAll('button').forEach(b => b.style.borderColor='var(--border)'); this.style.borderColor='var(--primary)'" style="border: 3px solid var(--border); padding: 1.5rem; border-radius: 8px; background: var(--bg); cursor: pointer; transition: all 0.3s ease;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+          <h3 style="margin: 0; font-size: 1rem;">Other</h3>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;">General feedback?</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback Form -->
+  <section class="section alt-bg">
+    <div class="container">
+      <form id="feedback-form" class="form" style="max-width: 700px; margin: 0 auto;">
+        <input type="hidden" id="feedback-type" name="feedback_type" value="">
+
+        <div>
+          <label for="feedback-name">Name</label>
+          <input type="text" id="feedback-name" name="name" required>
+        </div>
+
+        <div>
+          <label for="feedback-email">Email</label>
+          <input type="email" id="feedback-email" name="email" required>
+        </div>
+
+        <div>
+          <label for="product">Product</label>
+          <select id="product" name="product" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font-size: 1rem; margin-bottom: 1rem; font-family: inherit;">
+            <option value="">-- Select Product --</option>
+            <option value="web-app">Web App</option>
+            <option value="mobile-app">Mobile App</option>
+            <option value="api">API</option>
+            <option value="website">Website</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="feedback-message">Your Feedback</label>
+          <textarea id="feedback-message" name="message" rows="6" placeholder="Please be as detailed as possible..." required></textarea>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 1rem;">
+          <input type="checkbox" id="follow-up" name="follow_up" value="yes">
+          <label for="follow-up" style="margin: 0;">I'd like to hear back from the team about my feedback</label>
+        </div>
+
+        <div>
+          <label for="screenshot">Attachment (optional)</label>
+          <input type="file" id="screenshot" name="attachment" accept="image/*,.pdf,.txt" style="padding: 0.75rem; border: 2px dashed var(--border); border-radius: 6px; width: 100%; margin-bottom: 1rem; background: var(--bg); color: var(--text);">
+          <p style="color: var(--muted); font-size: 0.85rem; margin: 0;">Screenshots, images, or documents help us understand issues better.</p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn primary">Submit Feedback</button>
+          <p style="color: var(--muted); font-size: 0.9rem; margin: 0;">Thank you for helping us improve!</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Feedback FAQs</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">Will you respond to my feedback?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">We read and review all feedback submissions. While we can't respond to every individual submission, we prioritize feedback and use it to guide our product roadmap.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">How do you prioritize feature requests?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">We consider: impact (how many users will benefit), feasibility (can we build it), and alignment with our mission. Popular requests are prioritized in our development cycle.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">What happens after I report a bug?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">Our engineering team investigates bug reports and prioritizes fixes based on severity. Critical bugs are fixed immediately. We'll track the issue and notify you when it's resolved.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">Can I track my feedback status?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">Opt-in to follow-up emails and we'll send you updates about your feedback. For urgent issues, email us directly at feedback@linguasign.com.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">How do I request a new language?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">Select "Feature Request" and mention the sign language you'd like to see supported. Include information about native signers in your region who could help validate our models.</p>
+        </details>
+
+        <details style="border: 3px solid var(--border); padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; cursor: pointer;">
+          <summary style="font-weight: 600; cursor: pointer;">Is my data private when I submit feedback?</summary>
+          <p style="color: var(--muted); margin-top: 1rem;">Yes. Your feedback is treated confidentially and only shared internally with relevant teams. We never sell or share your data with third parties.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Join Our Community</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+          Connect with other Linguasign users, share ideas, and collaborate on feature requests in our community forum.
+        </p>
+        <button class="btn primary" onclick="alert('Launching community forum')">Join Community Forum</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-box">
+    <h2>Your Feedback Shapes Our Future</h2>
+    <p>Every suggestion, bug report, and idea helps us build a better product for everyone.</p>
+    <button class="btn white" onclick="document.querySelector('form').scrollIntoView({behavior:'smooth'})">Send Feedback Now</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">Status</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Linguasign. All rights reserved. | <a href="feedback.html" style="color: var(--muted); text-decoration: none;">Send Feedback</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

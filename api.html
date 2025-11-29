@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation - Linguasign</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🤟</span>
+        <span>Linguasign</span>
+      </a>
+      <nav class="site-nav">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Developer Friendly</div>
+      <h1>Powerful API<span class="accent">Documentation</span></h1>
+      <p class="hero-sub">Build amazing applications with our comprehensive RESTful API. Simple authentication, flexible endpoints, excellent support.</p>
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="section">
+    <div class="container">
+      <h2>Quick Start</h2>
+      <p class="section-sub">Get up and running in 5 minutes</p>
+      
+      <div style="background: var(--surface); border: 3px solid var(--border); border-radius: 8px; padding: 2rem; margin-top: 2rem;">
+        <h3 style="margin-bottom: 1rem;">1. Get Your API Key</h3>
+        <p style="color: var(--muted); margin-bottom: 2rem;">Sign up for a Pro or Enterprise plan and generate your API key from your dashboard.</p>
+        
+        <h3 style="margin-bottom: 1rem;">2. Make Your First Request</h3>
+        <pre style="background: var(--bg); border: 2px solid var(--border); padding: 1rem; border-radius: 6px; overflow-x: auto; margin-bottom: 2rem;"><code style="color: var(--primary);">curl -X POST https://api.linguasign.com/v1/translate \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "input": "Hello world",
+    "source_language": "en",
+    "target_language": "asl",
+    "output_format": "video"
+  }'</code></pre>
+
+        <h3 style="margin-bottom: 1rem;">3. Handle the Response</h3>
+        <pre style="background: var(--bg); border: 2px solid var(--border); padding: 1rem; border-radius: 6px; overflow-x: auto;"><code style="color: var(--primary);">{
+  "success": true,
+  "translation_id": "tr_1a2b3c4d5e",
+  "input_text": "Hello world",
+  "target_language": "asl",
+  "output_url": "https://video.linguasign.com/tr_1a2b3c4d5e.mp4",
+  "confidence": 0.99,
+  "processing_time_ms": 245
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Endpoints -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2>API Endpoints</h2>
+      <p class="section-sub">Core translation endpoints</p>
+      
+      <div style="display: grid; gap: 2rem; margin-top: 2rem;">
+        <!-- Text to Sign -->
+        <div style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <span style="background: var(--primary); color: white; padding: 0.5rem 0.75rem; border-radius: 4px; font-weight: 600; font-size: 0.85rem;">POST</span>
+            <code style="color: var(--primary); font-size: 1rem;">/v1/text-to-sign</code>
+          </div>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Convert text to sign language video or animation.</p>
+          <h4 style="margin-bottom: 0.5rem;">Request Parameters:</h4>
+          <ul style="list-style: none; margin-bottom: 1rem;">
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--surface);"><strong>input</strong> <span style="color: var(--primary);">string</span> - Text to translate</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--surface);"><strong>target_language</strong> <span style="color: var(--primary);">string</span> - Target sign language (asl, bsl, lsf, etc.)</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--surface);"><strong>output_format</strong> <span style="color: var(--primary);">string</span> - video, gif, or json</li>
+            <li style="padding: 0.5rem 0;"><strong>speed</strong> <span style="color: var(--primary);">number</span> - (optional) 0.5 to 2.0, default 1.0</li>
+          </ul>
+        </div>
+
+        <!-- Sign to Text -->
+        <div style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <span style="background: var(--primary); color: white; padding: 0.5rem 0.75rem; border-radius: 4px; font-weight: 600; font-size: 0.85rem;">POST</span>
+            <code style="color: var(--primary); font-size: 1rem;">/v1/sign-to-text</code>
+          </div>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Convert sign language video or image to text.</p>
+          <h4 style="margin-bottom: 0.5rem;">Request Parameters:</h4>
+          <ul style="list-style: none; margin-bottom: 1rem;">
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--surface);"><strong>video_url</strong> <span style="color: var(--primary);">string</span> - URL to video file</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--surface);"><strong>source_language</strong> <span style="color: var(--primary);">string</span> - Source sign language</li>
+            <li style="padding: 0.5rem 0;"><strong>output_language</strong> <span style="color: var(--primary);">string</span> - (optional) Target text language</li>
+          </ul>
+        </div>
+
+        <!-- Supported Languages -->
+        <div style="border: 3px solid var(--border); border-radius: 8px; padding: 2rem; background: var(--bg);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <span style="background: var(--primary); color: white; padding: 0.5rem 0.75rem; border-radius: 4px; font-weight: 600; font-size: 0.85rem;">GET</span>
+            <code style="color: var(--primary); font-size: 1rem;">/v1/languages</code>
+          </div>
+          <p style="color: var(--muted); margin-bottom: 1.5rem;">Get list of supported sign and spoken languages.</p>
+          <p style="color: var(--muted);">Returns array of language objects with codes and full names.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authentication -->
+  <section class="section">
+    <div class="container">
+      <h2>Authentication</h2>
+      <p class="section-sub">Secure your API requests</p>
+      
+      <div style="background: var(--surface); border: 3px solid var(--border); border-radius: 8px; padding: 2rem; margin-top: 2rem;">
+        <h3 style="margin-bottom: 1rem;">Bearer Token</h3>
+        <p style="color: var(--muted); margin-bottom: 1.5rem;">All API requests require authentication using a Bearer token in the Authorization header:</p>
+        
+        <pre style="background: var(--bg); border: 2px solid var(--border); padding: 1rem; border-radius: 6px; margin-bottom: 2rem;"><code style="color: var(--primary);">Authorization: Bearer YOUR_API_KEY</code></pre>
+
+        <h3 style="margin-bottom: 1rem;">Getting Your API Key</h3>
+        <ol style="padding-left: 2rem; color: var(--muted);">
+          <li style="margin-bottom: 0.5rem;">Sign up for Pro or Enterprise plan</li>
+          <li style="margin-bottom: 0.5rem;">Go to Settings → Developer → API Keys</li>
+          <li style="margin-bottom: 0.5rem;">Click "Generate New Key"</li>
+          <li>Copy and store securely (never commit to version control)</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rate Limits -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2>Rate Limits & Quotas</h2>
+      <p class="section-sub">Plan limits and request throttling</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; background: var(--bg);">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">Free Plan</h3>
+          <ul style="list-style: none; color: var(--muted);">
+            <li style="margin-bottom: 0.5rem;">✗ No API access</li>
+          </ul>
+        </div>
+
+        <div style="border: 3px solid var(--border); padding: 2rem; border-radius: 8px; background: var(--bg);">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">Pro Plan</h3>
+          <ul style="list-style: none; color: var(--muted);">
+            <li style="margin-bottom: 0.5rem;">✓ 1,000 requests/month</li>
+            <li style="margin-bottom: 0.5rem;">✓ 100 req/min rate limit</li>
+            <li style="margin-bottom: 0.5rem;">✓ 10 concurrent requests</li>
+          </ul>
+        </div>
+
+        <div style="border: 3px solid var(--border); border-color: var(--primary); padding: 2rem; border-radius: 8px; background: var(--bg);">
+          <h3 style="color: var(--primary); margin-bottom: 1rem;">Enterprise</h3>
+          <ul style="list-style: none; color: var(--muted);">
+            <li style="margin-bottom: 0.5rem;">✓ Unlimited requests</li>
+            <li style="margin-bottom: 0.5rem;">✓ Custom rate limits</li>
+            <li style="margin-bottom: 0.5rem;">✓ Priority support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Examples -->
+  <section class="section">
+    <div class="container">
+      <h2>Code Examples</h2>
+      <p class="section-sub">Implementation examples in popular languages</p>
+      
+      <div style="margin-top: 2rem;">
+        <h3 style="margin-bottom: 1.5rem;">Python Example</h3>
+        <pre style="background: var(--surface); border: 2px solid var(--border); padding: 1.5rem; border-radius: 6px; overflow-x: auto;"><code>import requests
+
+API_KEY = 'your_api_key_here'
+headers = {'Authorization': f'Bearer {API_KEY}'}
+
+response = requests.post(
+  'https://api.linguasign.com/v1/text-to-sign',
+  headers=headers,
+  json={
+    'input': 'Hello world',
+    'target_language': 'asl',
+    'output_format': 'video'
+  }
+)
+
+result = response.json()
+print(f"Video URL: {result['output_url']}")</code></pre>
+
+        <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">JavaScript Example</h3>
+        <pre style="background: var(--surface); border: 2px solid var(--border); padding: 1.5rem; border-radius: 6px; overflow-x: auto;"><code>const API_KEY = 'your_api_key_here';
+
+fetch('https://api.linguasign.com/v1/text-to-sign', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${API_KEY}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    input: 'Hello world',
+    target_language: 'asl',
+    output_format: 'video'
+  })
+})
+.then(res => res.json())
+.then(data => console.log(data.output_url));</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-box">
+    <h2>Ready to Build?</h2>
+    <p>Start integrating Linguasign API into your application today.</p>
+    <a href="contact.html" class="btn white">Contact Our Team</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="demo.html">Demo</a>
+        <a href="api.html">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">Status</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Linguasign. All rights reserved. | <a href="feedback.html" style="color: var(--muted); text-decoration: none;">Send Feedback</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
